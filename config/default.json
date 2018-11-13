@@ -1,0 +1,13 @@
+{
+  "API": {
+    "server": {
+      "url": "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com",
+      "endPoints": {
+          "requestInvite": "/prod/fake-auth"
+      },
+      "timeout": 10000,
+      "maxSockets": 500,
+      "successCodes": [200, 201, 204]
+    }
+  }
+}

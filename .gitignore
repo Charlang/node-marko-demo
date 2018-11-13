@@ -1,0 +1,6 @@
+public/min
+node_modules
+.idea
+.DS_Store
+pages/**/*.marko.js
+ui-components/**/*.marko.js

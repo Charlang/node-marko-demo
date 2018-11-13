@@ -1,0 +1,129 @@
+.request-invite {
+    .button {
+        max-width: 240px;
+        margin: auto;
+        padding: 15px 0;
+        border: 1px solid;
+        border-radius: 2px;
+        font-size: 18px;
+        &:hover {
+            box-shadow: 2px 2px 2px 0 color(gray);
+        }
+        cursor: pointer;
+    }
+    .request-overlay {
+        position: fixed;
+        @include z('request-invite');
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+        .content {
+            @include flexbox();
+            flex-direction: column;
+            justify-content: space-evenly;
+            -ms-flex-pack: justify;
+            @media (max-height: 200px) {
+                justify-content: normal;
+            }
+            padding: 24px 0;
+            max-height: 320px;
+            max-width: 382px;
+            overflow-y: scroll;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            background: white;
+            border-radius: 2px;
+            .cancel {
+                position: absolute;
+                padding: 16px;
+                right: 0;
+                top: 0;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .title {
+                font-size: 24px;
+                font-style: italic;
+            }
+            .text {
+                input {
+                    width: 80%;
+                    height: 42px;
+                    padding: 8px;
+                    box-sizing: border-box;
+                    font-size: 16px;
+                    border-radius: 2px;
+                    border-width: thin;
+                    &::placeholder {
+                      font-style: italic;
+                    }
+                    &:focus::placeholder {
+                        color: transparent;
+                    }
+                    &:focus {
+                        border-color: color(blue, light);
+                        outline-width: 1px;
+                        outline-offset: -3px;
+                        outline-color: color(blue, light);
+                        -webkit-appearance: none;
+                    }
+                }
+                &.error {
+                    input {
+                        border: 1px solid color(red);
+                        color: color(red);
+                        &::placeholder {
+                            color: color(red, light);
+                        }
+                    }
+                }
+            }
+            p {
+                display: none;
+                font-size: 16px;
+                padding: 0 32px;
+                font-weight: normal;
+            }
+            .button-wrapper {
+                width: 100%;
+                margin: 0 auto;
+                .submit-button {
+                    border: 1px solid;
+                    width: 80%;
+                    margin: auto;
+                    display: inline-block;
+                    line-height: 42px;
+                    font-size: 16px;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    &:hover {
+                      box-shadow: 2px 2px 2px 0 color(gray);
+                    }
+                }
+            }
+            .error-msg {
+                width: 80%;
+                margin: 0 auto;
+                line-height: 16px;
+                font-size: 14px;
+                font-weight: normal;
+                font-style: italic;
+            }
+            &.success {
+                max-height: 180px;
+                .cancel, .text {
+                    display: none;
+                }
+                p {
+                    display: block;
+                }
+            }
+        }
+    }
+}

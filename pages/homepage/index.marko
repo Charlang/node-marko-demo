@@ -1,0 +1,21 @@
+<include("../layout/index", data.i18n.head)>
+    <@styles>
+        <link href="/public/min/${data.assets.mainCss}" media="all" rel="stylesheet" />
+    </@styles>
+    <@scripts>
+        <script src="/public/min/${data.assets.mainJs}"></script>
+    </@scripts>
+    <@body>
+        <header title=data.i18n.head.title/>
+        <div class="content">
+            <div class="description">
+                <h2 class="slogan">$!{data.i18n.body.slogan}</h2>
+                <h3 class="label">${data.i18n.body.beTheFirst}</h3>
+                <request-invite
+                    i18n=data.i18n.body
+                    csrfToken=data.csrfToken/>
+            </div>
+        </div>
+        <footer i18n=data.i18n.footer/>
+    </@body>
+</include>

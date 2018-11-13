@@ -1,0 +1,47 @@
+// Common styles
+@import "../../layout/styles/base";
+
+// Components styles
+@import "../../../ui-components/header/styles/base";
+@import "../../../ui-components/footer/styles/base";
+@import "../../../ui-components/request-invite/styles/base";
+
+.content {
+    overflow: scroll;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    bottom: 46px;
+    @include flexbox();
+    .description {
+        margin: auto;
+        text-align: center;
+        .slogan {
+            font-size: 36px;
+            @include in-breakpoint($small) {
+              font-size: 20px;
+            }
+            @include in-breakpoint($medium) {
+              font-size: 28px;
+            }
+            @include from-breakpoint($large) {
+              font-size: 48px;
+            }
+        }
+        font-weight: bolder;
+        color: color(gray, medium);
+        .label {
+            padding: 24px;
+            @include in-breakpoint($small) {
+                padding: 16px;
+            }
+            font-weight: normal;
+            color: color(gray, medium);
+            font-size: 16px;
+        }
+    }
+}
+
+
+

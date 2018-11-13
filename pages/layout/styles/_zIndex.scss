@@ -1,0 +1,25 @@
+$index-config: (
+    "min",  // -1 as init
+    //-------------------- Split begin----------------------------------
+    "request-invite",
+    //-------------------- Split end------------------------------------
+    "max"  // Global max across whole application will cover everything
+);
+
+$index-map: ();
+$count: -1;
+
+@each $item in $index-config {
+    $index-map: map-merge($index-map, ($item: $count));
+    $count: $count + 10;
+}
+
+// API interface
+@mixin z($key) {
+    $value: map-get($index-map, $key);
+    @if $value {
+        z-index: $value;
+    } @else {
+        @warn "Index is not cofigured: '#{$key}'";
+    }
+}

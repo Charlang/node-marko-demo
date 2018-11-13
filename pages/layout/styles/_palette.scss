@@ -1,0 +1,22 @@
+$colors: (
+  gray: (
+    base: #b4b4b4,
+    light: #ababab,
+    medium: #7d7d7d,
+    dark: #3b3b3b,
+    deep: #1c1c1c,
+  ),
+  blue: (
+    base: #074fff,
+    light: #00a9fe,
+    dark: blue
+  ),
+  red: (
+    base: red,
+    light: rgba(255, 0, 0, 0.63)
+  )
+);
+
+@function color($name, $tone: base) {
+    @return map_get(map_get($colors, $name), $tone)
+}

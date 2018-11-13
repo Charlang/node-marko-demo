@@ -1,0 +1,29 @@
+{
+    "head": {
+        "title": "Broccoli & Co.",
+        "description": "Broccoli & Co., an upcoming online service company, would like to let people to \"Request an invitation\" on their website."
+    },
+    "body": {
+        "slogan": "更好的方式<br>享受美好的一天.",
+        "beTheFirst": "Be the first to know when we launch.",
+        "fullName": "Full name",
+        "email": "Email",
+        "confirmEmail": "Confirm email",
+        "title": {
+            "START": "Request an invite",
+            "SENDING": "Request an invite",
+            "SUCCESS": "All Done !"
+        },
+        "status": {
+            "INIT": "Request an invite",
+            "START": "Send",
+            "SENDING": "Sending, please wait ...",
+            "SUCCESS": "Ok"
+        },
+        "successMsg": "You will be one of the first to experience Broccoli & Co. when we launch"
+    },
+    "footer": {
+        "madeIn": "Made with &#10084; in Shanghai",
+        "copyright": "&copy; 2018 Broccoli & Co. All rights reserved."
+    }
+}

@@ -1,0 +1,53 @@
+$small: 'small';
+$medium: 'medium';
+$large: 'large';
+
+$screen-small: 320px;  // iphone 5s
+$screen-medium: 768px; // ipad
+$screen-large: 1024px; // desktop min
+
+@mixin from-breakpoint($range) {
+    @if ($range == $small) {
+        @warn 'no more breakpoints';
+        @content
+    } @else if ($range == $medium) {
+        @media (min-width: $screen-medium) {
+            @content
+        }
+    } @else if ($range == $large) {
+        @media (min-width: $screen-large) {
+            @content
+        }
+    }
+}
+
+@mixin to-breakpoint($range) {
+  @if ($range == $small) {
+      @media (max-width: $screen-small - 1) {
+          @content
+      }
+  } @else if ($range == $medium) {
+      @media (max-width: $screen-medium - 1) {
+          @content
+      }
+  } @else if ($range == $large) {
+      @warn 'no more breakpoints';
+      @content
+  }
+}
+
+@mixin in-breakpoint($range) {
+  @if ($range == $small) {
+      @media (max-width: $screen-small - 1) {
+          @content
+      }
+  } @else if ($range == $medium) {
+      @media (min-width: $screen-small) and (max-width: $screen-medium - 1) {
+          @content
+      }
+  } @else if ($range == $large) {
+      @media (min-width: $screen-small) and (max-width: $screen-medium - 1) {
+          @content
+      }
+  }
+}

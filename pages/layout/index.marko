@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>
+            <include(data.title)/>
+        </title>
+        <meta name="description" content=data.description>
+        <meta name="robots" content="index, follow">
+        <link rel="preload shortcut icon" href="/public/images/favicon.png" as="image" type="image/x-icon">
+        <link rel="canonical" href="http://www.broccoli.com" />
+        <!--
+        <link> tags to include optimized CSS URLs will be included below:
+        -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" media="all" rel="stylesheet" />
+        <include(data.styles)/>
+    </head>
+    <body>
+        <div class="container">
+            <main id="main">
+                <include(data.body)/>
+            </main>
+        </div>
+
+        <!--
+        <script> tags to include optimized JS URLs will be included below:
+        -->
+        <include(data.scripts)/>
+    </body>
+</html>

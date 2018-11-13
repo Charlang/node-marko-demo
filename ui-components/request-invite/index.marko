@@ -1,0 +1,34 @@
+<div class="request-invite">
+    <div class="button" onClick("handleShowRequestClick")>
+        ${state.i18n.status[state.inputs.status]}
+    </div>
+    <div class=["request-overlay", state.inputs.status !== "INIT" ? null : "hidden"]
+        onClick("handleCloseOverlay")>
+        <div class=["content", state.inputs.status === "SUCCESS" ? "success" : null]>
+            <div class="cancel">&#10005;</div>
+            <div class="title">${state.i18n.title[state.inputs.status]}</div>
+            <div class=["text", state.inputs.nameErr ? "error" : null]>
+                <input type="text" placeholder=state.i18n.fullName
+                    value=state.inputs.name onChange("handleInputChange", "SET_NAME")
+                    onKeyup("deBounceInputTyping", "SET_NAME")>
+            </div>
+            <div class=["text", state.inputs.emailErr ? "error" : null]>
+                <input type="text" placeholder=state.i18n.email
+                    value=state.inputs.email onChange("handleInputChange", "SET_EMAIL")
+                    onKeyup("deBounceInputTyping", "SET_EMAIL")>
+            </div>
+            <div class=["text", state.inputs.emailErr || (!state.inputs.emailConfirmed && state.inputs.confirmEmail) ? "error" : null]>
+                <input type="text" placeholder=state.i18n.confirmEmail
+                    value=state.inputs.confirmEmail onChange("handleInputChange", "CONFIRM_EMAIL")
+                    onKeyup("deBounceInputTyping", "CONFIRM_EMAIL")>
+            </div>
+            <p>${state.i18n.successMsg}</p>
+            <div class="button-wrapper">
+                <span class="submit-button" onClick("handleSubmit")>
+                    ${state.i18n.status[state.inputs.status]}
+                </span>
+            </div>
+            <div class="error-msg">${state.inputs.errorMsg}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.header {
+    border-bottom: 1px solid color(gray, dark);
+    h1 {
+        line-height: 48px;
+        font-size: 24px;
+        font-weight: bold;
+        @include from-breakpoint($medium) {
+            padding-left: 128px;
+        }
+        @include in-breakpoint($medium) {
+            padding-left: 64px;
+        }
+        @include to-breakpoint($small) {
+            padding-left: 32px;
+        }
+        color: color(gray, medium);
+    }
+}
