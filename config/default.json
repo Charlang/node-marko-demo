@@ -15,5 +15,6 @@
   },
   "footer": {
     "js": "/public/min/"
-  }
+  },
+  "staticRoot": "/public"
 }

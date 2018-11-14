@@ -12,6 +12,8 @@ const i18n = require('i18n-2');
 const csrf = require('csurf');
 const zlib = require('zlib');
 const compression = require('compression');
+const config = require('config');
+const staticRoot = config.get('staticRoot');
 
 const localeMiddleWare = require('./middlewares/locale');
 const headerMiddleWare = require('./middlewares/header');
@@ -42,12 +44,17 @@ i18n.expressBind(app, {
 });
 
 // Static
-app.use('/public', express.static(process.cwd() + '/public', {
-    root: '/public',
-    etag: false,
-    maxage: 0,
-    index: false
+app.use(staticRoot, express.static(process.cwd() + staticRoot, {
+    etag: process.env.NODE_ENV === 'production' ? true : false,
+    maxage: process.env.NODE_ENV === 'production' ? 0 : '30d',
+    index: false,
+    setHeaders: function (res) {
+        res.set('X-Powered-By', 'B&C');
+    }
 }));
+
+// Strong etag for dynamic is exist
+app.set('etag', 'strong');
 
 // Parser header
 app.use(bodyParser.json());

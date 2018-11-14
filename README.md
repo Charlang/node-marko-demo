@@ -45,27 +45,27 @@ choose version: **10.13.0 LTS** or greater:
     ```
     Error: listen EADDRINUSE :::8000
     ```
-    Then you can try below command to kill *8000 PID* and restart
+    Then you can try below command to kill *8000 PID* and restart.
     ```
     $ kill -9 $(lsof -ti tcp:8000)
     $ npm run dev
     ```
-    Application can be access by: [http://localhost:8000/](http://localhost:8000/)
+    After server start, application can be access by: [http://localhost:8000/](http://localhost:8000/)
 
-3. **Unit and Integration Test**
+3. **Unit Test and Integration Test**
     ```
     $ npm test
     ```
 
 4. **Production**
 
-    Build
+* Build
     ```
     $ npm install
 
     $ npm run build
     ```
-    Start Application
+* Start Application
     ```
     $ npm run prod
     ```
@@ -76,8 +76,8 @@ choose version: **10.13.0 LTS** or greater:
     ```
     $ docker build -t node-marko-demo .
     ```
-    Here only list command for local Docker test, but with the image you
-    simply scale with Kubernetes or any other cloud.
+    Here only list command for local Docker test, but with the image we
+    can simply scale with Kubernetes or any other cloud.
     ```
     $ docker run -p 8000:8000 -d node-marko-demo
     ```
@@ -106,13 +106,20 @@ choose version: **10.13.0 LTS** or greater:
 
     * Separate Test / Development / Production build and running environments.
     * Server side response are compress with *gzip* and assets using *hashed* file
-      name for version control.
+      name for version control and enhance with *etag*.
     * API call secured with *CSRF* implementation.
     * Setup as single page application but can easy be expand to support multiple pages.
     * Localization is consider properly with *content-language* and cookie based server side solution.
     * Most of SEO content are setup and with server side rendering to make the page search friendly.
     * Development friendly with eslint and gulp watch.
-    * *MarkoJs* are similar with *React* and could be migrate with small effort.
+    * *MarkoJs* are similar with *React* and could be migrate with
+      small effort [Marko vs React](https://markojs.com/docs/marko-vs-react/).
+
+### TODO
+* Spend more resource for Unit Test and BDD TEST
+* Production deployment script with kubernetes or docker swarm
+* Setup SSL for secured HTTPS access
+
 
 ### Changes history
     Version1.0.0
