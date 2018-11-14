@@ -26,6 +26,7 @@ module.exports = (state = INIT, action) => {
         case 'CONFIRM_EMAIL':
             confirmEmail = action.value;
             emailConfirmed = action.value && action.value === email;
+            emailErr = !emailConfirmed;
             break;
         case 'SUBMIT':
             nameErr = !name;
@@ -39,7 +40,7 @@ module.exports = (state = INIT, action) => {
             status = action.type;
             break;
         case 'ERR':
-            errorMsg = action.value && action.value.replace('data.', '');
+            errorMsg = action.value && action.value.replace(/data./g, '');
             nameErr = action.value && action.value.toLowerCase().indexOf('name') !== -1;
             emailErr = action.value && action.value.toLowerCase().indexOf('email') !== -1;
             break;

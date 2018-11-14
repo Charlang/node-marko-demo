@@ -39,6 +39,17 @@ describe('Redux reducer:', () => {
             state = inputs(state, { type, value: 'abc' });
             assert.equal(state.emailConfirmed, false);
         });
+        it('Should set confirm email and check email status', () => {
+            let type = 'SET_EMAIL', value = 'abc@123';
+            let state = inputs(undefined, { type, value });
+            type = 'CONFIRM_EMAIL';
+            value = 'abc';
+            state = inputs(state, { type, value });
+            let { confirmEmail, emailErr, emailConfirmed } = state;
+            assert.equal(confirmEmail, value);
+            assert.equal(emailErr, true);
+            assert.equal(emailConfirmed, false);
+        });
         it('Should update state after submit', () => {
             let type = 'SUBMIT';
             let state = inputs(undefined, { type });
