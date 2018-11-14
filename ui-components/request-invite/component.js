@@ -39,16 +39,13 @@ module.exports = {
         }, 228);
     },
     handleSubmit() {
+        this.store.dispatch({ type: 'SUBMIT' });
         const { status, name, email, nameErr, emailErr, emailConfirmed } = this.store.getState();
-        if (status === 'SENDING') {
+        if (status === 'SENDING' || nameErr || emailErr || !emailConfirmed) {
             return;
         }
         if (status === 'SUCCESS') {
             this.store.dispatch({ type: 'RESET' });
-            return;
-        }
-        this.store.dispatch({ type: 'SUBMIT' });
-        if (nameErr || emailErr || !emailConfirmed) {
             return;
         }
         const { sendInvite } = require('../utils/fetch');

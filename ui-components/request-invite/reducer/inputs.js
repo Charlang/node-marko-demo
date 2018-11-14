@@ -29,8 +29,8 @@ module.exports = (state = INIT, action) => {
             emailErr = !emailConfirmed;
             break;
         case 'SUBMIT':
-            nameErr = !name;
-            emailErr = !email || email !== confirmEmail;
+            nameErr = nameErr || !name;
+            emailErr = emailErr || !email || email !== confirmEmail;
             break;
         case 'RESET':
             return INIT;

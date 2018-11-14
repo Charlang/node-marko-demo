@@ -22,7 +22,7 @@
                     value=state.inputs.confirmEmail onChange("handleInputChange", "CONFIRM_EMAIL")
                     onKeyup("deBounceInputTyping", "CONFIRM_EMAIL")>
             </div>
-            <p>${state.i18n.successMsg}</p>
+            <p>$!{state.i18n.successMsg}</p>
             <div class="button-wrapper">
                 <span class="submit-button" onClick("handleSubmit")>
                     ${state.i18n.status[state.inputs.status]}

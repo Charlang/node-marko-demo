@@ -119,6 +119,7 @@ choose version: **10.13.0 LTS** or greater:
 * Spend more resource for Unit Test and BDD TEST
 * Production deployment script with kubernetes or docker swarm
 * Setup SSL for secured HTTPS access
+* Enhance error message format and error message to support localization
 
 
 ### Changes history
