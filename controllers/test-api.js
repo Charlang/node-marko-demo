@@ -2,7 +2,7 @@
 
 // Global test evn setup
 process.env.NODE_ENV = 'test';
-process.env.PORT = 7000;
+process.env.PORT = 8000;
 process.env.NODE_CONFIG_DIR = './config';
 
 const chai = require('chai');
@@ -15,7 +15,7 @@ should();  // Modifies `Object.prototype`
 
 let requester = null;
 
-describe('Node Sever: ', function () {
+describe('Node Sever Integration: ', function () {
     before(function () {
         requester = chai.request(server).keepOpen();
     });
@@ -28,6 +28,7 @@ describe('Node Sever: ', function () {
                 .then(([res]) => {
                     expect(res).to.have.status(200);
                     assert.equal(res.headers['x-powered-by'], 'B&C');
+                    assert.equal(res.headers['content-encoding'], 'gzip');
                     done();
                 });
         });
@@ -45,7 +46,18 @@ describe('Node Sever: ', function () {
                     done();
                 });
         });
-        it('Should POST with error when name parameters invalid', function (done) {
+        it('Should POST return err with duplicated data', function (done) {
+            requester.post('/api/invite')
+                .send({
+                    name: '123',
+                    email: 'usedemail@airwallex.com'})
+                .end(function(err) {
+                    err.should.have.status(400);
+                    assert.equal(err.rawResponse, 'Bad Request: Email is already in use');
+                    done();
+                });
+        });
+        it('Should POST return error when name parameters invalid', function (done) {
             requester.post('/api/invite')
                 .send({
                     name: '13',
@@ -56,7 +68,7 @@ describe('Node Sever: ', function () {
                 done();
             });
         });
-        it('Should POST with error when email parameters invalid', function (done) {
+        it('Should POST return error when email parameters invalid', function (done) {
             requester.post('/api/invite')
                 .send({
                     name: '133',
@@ -67,14 +79,14 @@ describe('Node Sever: ', function () {
                 done();
             });
         });
-        it('Should POST with error when name and email both invalid', function (done) {
+        it('Should POST return error when name and email both invalid', function (done) {
             requester.post('/api/invite')
                 .send({
                     name: '12',
                     email: '123'
                 }).end(function(err) {
                 err.should.have.status(400);
-                assert.equal(err.rawResponse, 'data.name should NOT be shorter than 3 characters\ndata.email should match format "email"');
+                assert.equal(err.rawResponse, 'data.name should NOT be shorter than 3 characters;\ndata.email should match format "email"');
                 done();
             });
         });

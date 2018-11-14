@@ -18,7 +18,7 @@ router.post('/invite', (req, res) => {
         allErrors: true
     });
     if (!ajv.validate(inviteReqSchema, req.body)) {
-        let data = ajv.errorsText(ajv.errors,  { separator: '\n' });
+        let data = ajv.errorsText(ajv.errors,  { separator: ';\n' });
         res.status(400).send(data);
         return;
     }

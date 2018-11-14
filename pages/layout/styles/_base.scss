@@ -4,8 +4,20 @@
 @import "zIndex";
 @import "flex";
 
+@font-face {
+  font-family: 'Consolas';
+  src: url('../../../public/font/Consolas.eot');
+  src: url('../../../public/font/Consolas.woff2') format('woff2'),
+  url('../../../public/font/Consolas.woff') format('woff'),
+  url('../../../public/font/Consolas.ttf') format('truetype'),
+  url('../../../public/font/Consolas.svg#Consolas') format('svg'),
+  url('../../../public/font/Consolas.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    font-family: Roboto, sans-serif;
+    font-family: Consolas, sans-serif;
     overflow-x: hidden;
 }
 

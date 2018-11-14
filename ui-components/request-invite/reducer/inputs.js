@@ -39,7 +39,7 @@ module.exports = (state = INIT, action) => {
             status = action.type;
             break;
         case 'ERR':
-            errorMsg = action.value;
+            errorMsg = action.value && action.value.replace('data.', '');
             nameErr = action.value && action.value.toLowerCase().indexOf('name') !== -1;
             emailErr = action.value && action.value.toLowerCase().indexOf('email') !== -1;
             break;
