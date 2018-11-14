@@ -94,7 +94,7 @@ choose version: **10.13.0 LTS** or greater:
     At client side, it's interact as a *mobile friendly* single page app,
     after page loaded, all user interaction happen inside without refresh,
     by leverage *Marko* UI component and *Redux* library to main state and
-    bind update page, client side only check for empty values and
+    bind page update, client side only check for empty values and
     leverage *server side validation* for data consistent check,
     all those happen on [Fetch](https://www.npmjs.com/package/whatwg-fetch)
     ajax call, which hidden the complexity and validation implementation
@@ -105,11 +105,17 @@ choose version: **10.13.0 LTS** or greater:
     Beyond requirements, this simple yet clean application is flexible.
 
     * Separate Test / Development / Production build and running environments.
-    * Server side response are compress with gzip and assets using hashed file
+    * Server side response are compress with *gzip* and assets using *hashed* file
       name for version control.
-    * API call secured with CSRF implementation.
+    * API call secured with *CSRF* implementation.
     * Setup as single page application but can easy be expand to support multiple pages.
-    * Localization is consider properly with *content-language* and cookie based server solution.
+    * Localization is consider properly with *content-language* and cookie based server side solution.
     * Most of SEO content are setup and with server side rendering to make the page search friendly.
     * Development friendly with eslint and gulp watch.
+    * *MarkoJs* are similar with *React* and could be migrate with small effort.
 
+### Changes history
+    Version1.0.0
+
+### License
+    Apache License Version 2.0, January 2004
