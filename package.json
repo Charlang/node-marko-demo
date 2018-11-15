@@ -21,10 +21,12 @@
   "bugs": {
     "url": "https://github.com/Charlang/CharLang/issues"
   },
+  "browserslist": "> 0.25%, not dead",
   "homepage": "https://github.com/Charlang/CharLang#readme",
   "dependencies": {
     "ajv": "6.5.5",
     "body-parser": "1.18.3",
+    "browserslist": "4.3.4",
     "colors": "1.3.2",
     "compression": "1.7.3",
     "config": "2.0.1",
