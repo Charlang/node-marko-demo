@@ -35,6 +35,9 @@
             top: 0;
             right: 0;
             left: 0;
+            @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                left: calc(50% - 220px);
+            }
             bottom: 0;
             margin: auto;
             background: white;
