@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/Charlang/CharLang/issues"
   },
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": "> 0.01%, not dead",
   "homepage": "https://github.com/Charlang/CharLang#readme",
   "dependencies": {
     "ajv": "6.5.5",
