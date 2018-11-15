@@ -17,6 +17,9 @@
     .description {
         margin: auto;
         text-align: center;
+        @include flexbox();
+        flex-direction: column;
+        -ms-flex-pack: center;
         .slogan {
             font-size: 36px;
             @include in-breakpoint($small) {

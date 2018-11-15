@@ -24,6 +24,7 @@
   "browserslist": "> 0.01%, not dead",
   "homepage": "https://github.com/Charlang/CharLang#readme",
   "dependencies": {
+    "@babel/polyfill": "7.0.0",
     "ajv": "6.5.5",
     "body-parser": "1.18.3",
     "browserslist": "4.3.4",

@@ -42,12 +42,12 @@ module.exports = {
             {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: [
-                    'file-loader'
+                    "file-loader"
                 ]
             },
             {
                 test: /\.marko$/,
-                loader: 'marko-loader'
+                loader: "marko-loader"
             }
         ]
     },
