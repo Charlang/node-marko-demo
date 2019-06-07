@@ -1,9 +1,11 @@
-<include("../layout/index", data.i18n.head)>
-    <@styles>
-        <link href="${data.assets.mainCss}" media="all" rel="stylesheet" />
+import Layout from "../layout/index"
+
+<${Layout} ...data.i18n.head>
+  <@styles>
+        <link href=`${data.assets.mainCss}` media="all" rel="stylesheet" />
     </@styles>
     <@scripts>
-        <script src="${data.assets.mainJs}"></script>
+        <script src=`${data.assets.mainJs}`></script>
     </@scripts>
     <@body>
         <header title=data.i18n.head.title/>
@@ -18,4 +20,4 @@
         </div>
         <footer i18n=data.i18n.footer/>
     </@body>
-</include>
+</>

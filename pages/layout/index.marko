@@ -4,20 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>
-            <include(data.title)/>
+            <${data.title}/>
         </title>
         <meta name="description" content=data.description>
         <meta name="robots" content="index, follow">
         <link rel="preload shortcut icon" href="/public/images/favicon.png" as="image" type="image/x-icon">
         <link rel="canonical" href="http://www.broccoli.com" />
-        <include(data.styles)/>
+        <${data.styles}/>
     </head>
     <body>
         <div class="container">
             <main id="main">
-                <include(data.body)/>
+                <${data.body}/>
             </main>
         </div>
-        <include(data.scripts)/>
+        <${data.scripts}/>
     </body>
 </html>
